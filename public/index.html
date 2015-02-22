@@ -35,6 +35,10 @@
     document.getElementById('info').innerText = "Hubo cambios. Probablemente se abrió la inscripción."
   })
 
+  socket.on('sin-cambios', function(){
+    console.log('sin cambios')
+  })
+
   </script>
 </body>
 </html>

@@ -8,8 +8,9 @@ var io = require('socket.io')(server);
 var unixServer = net.createServer(function(client) {
     console.log('Client connected');
     client.on('data', function(data){
-      console.log(data.toString());
-      io.emit('cambios');
+      data = data.toString();
+      console.log(data);
+      io.emit(data);
     })
 });
 
