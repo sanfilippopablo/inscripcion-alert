@@ -6,11 +6,14 @@
 </head>
 <body>
   <h1>Inscripción Alert</h1>
+  <h1 id="info"></h1>
   <audio src="alarma.mp3" loop id="alarma"></audio>
   <button class="btn btn-primary" id="stop-button">Stop alarm</button>
 
   <script src="/socket.io/socket.io.js"></script>
   <script type="text/javascript">
+
+  // Alarm stuff
   var audio = document.getElementById('alarma');
 
   function playAlarm() {
@@ -24,7 +27,14 @@
   // Button stops alarm
   document.getElementById('stop-button').addEventListener('click', stopAlarm);
 
-  //
+  // Connect to socket server
+  var socket = io.connect();
+
+  socket.on('cambios', function(){
+    playAlarm();
+    document.getElementById('info').innerText = "Hubo cambios. Probablemente se abrió la inscripción."
+  })
+
   </script>
 </body>
 </html>
