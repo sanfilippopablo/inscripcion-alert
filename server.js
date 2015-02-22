@@ -1,3 +1,4 @@
+var fs = require('fs');
 var net = require('net');
 var express = require('express')
 var app = express();
@@ -8,10 +9,16 @@ var unixServer = net.createServer(function(client) {
     console.log('Client connected');
     client.on('data', function(data){
       console.log(data.toString());
+      io.emit('cambios');
     })
 });
 
-unixServer.listen('/var/run/inscripcion-alert-socket');
+var socket_addr = 'alert.sock'
+if (fs.existsSync(socket_addr)) {
+  fs.unlinkSync(socket_addr);
+}
+
+unixServer.listen(socket_addr);
 
 io.on('connection', function(socket){
   console.log('Connected');
