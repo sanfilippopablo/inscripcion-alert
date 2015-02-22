@@ -1,0 +1,20 @@
+{
+  "name": "inscripcion-alert",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sanfilippopablo/inscripcion-alert.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanfilippopablo/inscripcion-alert/issues"
+  },
+  "homepage": "https://github.com/sanfilippopablo/inscripcion-alert"
+}
