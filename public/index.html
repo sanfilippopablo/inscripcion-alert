@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inscripción Alert</title>
+</head>
+<body>
+  <h1>Inscripción Alert</h1>
+  <audio src="alarma.mp3" loop id="alarma"></audio>
+  <button class="btn btn-primary" id="stop-button">Stop alarm</button>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript">
+  var audio = document.getElementById('alarma');
+
+  function playAlarm() {
+    audio.play();
+  }
+
+  function stopAlarm() {
+    audio.pause();
+  }
+
+  // Button stops alarm
+  document.getElementById('stop-button').addEventListener('click', stopAlarm);
+
+  //
+  </script>
+</body>
+</html>
